@@ -1,15 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  app: null,
+  mp3: null,
+  midi: null,
 };
 
 const appSlice = createSlice({
   name: "app",
   initialState,
-  reducers: {},
+  reducers: {
+    updateMidi: (state, action) => {
+      state.midi = action.payload;
+    },
+  },
 });
 
-export const {} = appSlice.actions;
+export const { updateMidi } = appSlice.actions;
 
 export default appSlice.reducer;
